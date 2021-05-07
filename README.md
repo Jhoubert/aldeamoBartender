@@ -14,44 +14,43 @@ There is the solution to the tech challenge in order to continue with the proces
 There is to ways to run this project.
 
 ---
-####The first one:
-- **Running with docker** (test skipped).
+###Running with docker
+(Unit-Test skipped).
   
-    *This is the easiest way to run the project, because the docker-compose.yml contains every single requirement configured for this project including maven compilation and satisfying all te dependencies or libraries. The unit-test are skipped because during the maven compilation mysql isn't running yet, it just require a extra configuration with a ci/cd in order to be able to run test in this step.*
-    ####
-    - **Requirements**:
-        - Docker (with `docker-compose` on Windows is auto-intalled)
+*This is the easiest way to run the project, because the docker-compose.yml contains every single requirement configured for this project including maven compilation and satisfying all te dependencies or libraries. The unit-test are skipped because during the maven compilation mysql isn't running yet, it just require a extra configuration with a ci/cd in order to be able to run test in this step.*
+
+- **Requirements**:
+    - Docker (with `docker-compose` on Windows is auto-intalled)
+
+- **Running project**
+    - For run, you only need to run `docker-compose up -d` and it will resolve the dependencies and compile the project automatically.
     
-    - **Running project**
-        - For run, you only need to run `docker-compose up -d` and it will resolve the dependencies and compile the project automatically.
-        
-            ***note**:The first launch will compile the project and resolve all the dependencies, so the project will take a few minutes to download all the required packages.*
+        ***note**:The first launch will compile the project and resolve all the dependencies, so the project will take a few minutes to download all the required packages.*
 
 ----
-    
-- **Running locally**
-  
-    *In this case you need to has java installed be able to run a project with mvn.*
-    - ###**Requirements**:
-        - Java 8
-        - An IDE
-        - MVN installed
-        - Mysql (can be a dockerized mysql instance)
-    
-    - ###Running project
-        First way:
-        You need to compile the project using mvn, you must run mvn installer:
-      
-        `mvn clean install`
 
-        When the project is compiled you must move to the target folder and run the jar with mvn or java:
-      
-        `cd target`
-      
-        `mvn spring-boot:run`
-    
-        Second way (easier): 
-            Importing the project in a IDE with mvn support and running it the file `BartenderTestApplication.java` for run the project (service) or `BartenderTestApplication.java` in order tu run the unitTests.
+###Running locally 
+*In this case you need to has java installed be able to run a project with mvn.*
+- **Requirements**:
+    - Java 8
+    - An IDE
+    - MVN installed
+    - Mysql (can be a dockerized mysql instance)
+
+- **Running project**
+    First way:
+    You need to compile the project using mvn, you must run mvn installer:
+  
+    `mvn clean install`
+
+    When the project is compiled you must move to the target folder and run the jar with mvn or java:
+  
+    `cd target`
+  
+    `mvn spring-boot:run`
+
+    Second way (easier): 
+        Importing the project in a IDE with mvn support and running it the file `BartenderTestApplication.java` for run the project (service) or `BartenderTestApplication.java` in order tu run the unitTests.
 
 
 
