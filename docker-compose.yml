@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql:5.6
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 4ld34m0t3st*.r00t
+      MYSQL_USER: basic_user
+      MYSQL_PASSWORD: 4ld34m0t3st*.
+      MYSQL_DATABASE: bartender
+    volumes:
+      - ./data:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
+
+  bartender_app:
+    image: app-testaldeamo
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
