@@ -2,19 +2,19 @@
 
 There is the solution to the tech challenge in order to continue with the process.
 
-##Stack:
+## Stack:
 - Java 8 as programming language
 - Spring Boot 2.5 as framework
 - Mysql 5.7 as database
 - Docker (with docker-compose) as container
 
 
-##How to run:
+## How to run:
 
 There is to ways to run this project.
 
 ---
-###Running with docker
+### Running with docker
 (Unit-Test skipped).
   
 *This is the easiest way to run the project, because the docker-compose.yml contains every single requirement configured for this project including maven compilation and satisfying all te dependencies or libraries. The unit-test are skipped because during the maven compilation mysql isn't running yet, it just require a extra configuration with a ci/cd in order to be able to run test in this step.*
@@ -29,7 +29,7 @@ There is to ways to run this project.
 
 ----
 
-###Running locally 
+### Running locally 
 *In this case you need to has java installed be able to run a project with mvn.*
 - **Requirements**:
     - Java 8
@@ -54,7 +54,7 @@ There is to ways to run this project.
 
 
 
-##How to consume the service/API:
+## How to consume the service/API:
 The base api endpoint is `/api/bartender/solve/{q}/{id}` 
 
 The method for this request is `GET`
