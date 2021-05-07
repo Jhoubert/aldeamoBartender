@@ -30,27 +30,41 @@ There is to ways to run this project.
 ----
 
 ### Running locally 
-*In this case you need to has java installed be able to run a project with mvn.*
+*In this case you need to has java installed, be able to run a project with mvn and has a Mysql installed in your environmen, you can use a dockerized mysql database with no problem*
 - **Requirements**:
     - Java 8
-    - An IDE
+    - An IDE _(optional)_
     - MVN installed
     - Mysql (can be a dockerized mysql instance)
 
+
+- **Configuring the project**
+    
+    If you want to run the project locally you need to configure the file `service.properties`
+  
+    In this file you need to change the `datasource url`, `datasource.username` and `datasource.password` for your own. 
+  
+    For use a local url you must uncomment the line wich contains localhost url `#spring.datasource.url=jdbc:mysql://localhost:3306/bartender` and just comment the another one.
+    For `dataosource.username` and `datasource.passowrd` you only need to change it for your own database credentials, if the user doesn't have privileges to create databases you need to create `bartender` and grant privileges to the user were you using.
+    
+
 - **Running project**
-    First way:
-    You need to compile the project using mvn, you must run mvn installer:
+    
+  *First way:*
   
-    `mvn clean install`
+  You need to compile the project using mvn, you must run mvn installer:
+  
+  `mvn clean install`
 
-    When the project is compiled you must move to the target folder and run the jar with mvn or java:
+  When the project is compiled you must move to the target folder and run the jar with mvn or java:
   
-    `cd target`
+  `cd target`
   
-    `mvn spring-boot:run`
+  `mvn spring-boot:run`
 
-    Second way (easier): 
-        Importing the project in a IDE with mvn support and running it the file `BartenderTestApplication.java` for run the project (service) or `BartenderTestApplication.java` in order tu run the unitTests.
+  Second way (easier): 
+  
+  Importing the project in a IDE with mvn support and running it the file `BartenderTestApplication.java` for run the project (service) or `BartenderTestApplicationTests.java` in order tu run the unitTests.
 
 
 
